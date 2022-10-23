@@ -1,0 +1,134 @@
+/* #region container */
+html, body {
+    margin: 0;
+    font-family: monospace;
+}
+
+body {
+    padding: 10px;
+    background: #323c44;
+}
+
+#container {
+    overflow: hidden;
+    position: relative;
+    background: #323c44;
+    background-image: url(img/bg.png);
+    border: 1px solid rgb(253, 200, 51);
+    border-radius: 0.5em;
+    display: block;
+    margin: 0 auto;
+    /*   
+        FORCING 16:9 width:height ratio
+        9/16 = 0.5625
+        16/9 = 1.7778
+        22px = (2*10px padding) + (2*1px border) 
+        -----------------------------------------
+        9/16 * 22px = 12.375px 
+        16/9 * 22px = 39.111px 
+    */
+    width: calc(100vw - 22px);
+    height: calc(56.25vw - 12.375px);
+    max-width: calc(177.78vh - 39.111px);
+    max-height: calc(100vh - 22px);
+    -webkit-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+}
+/* #endregion */
+
+
+/* #region settings */
+#settings {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5em 0.5em 0 0.5em;
+    background: #90909073;
+    padding: 0.35em 0.25em 0.25em 0.25em;
+    /*border-radius: 5px 5px 0 0;*/
+    width: 20em;
+    border-radius: 0.5em;
+    position: absolute;
+    right: 0.1em;
+    border: 1px solid rgb(253, 200, 51);
+}
+
+    #settings > div {
+        display: flex;
+        flex-direction: column;
+        /*flex-grow: 100;*/
+        flex-basis: 20em;
+        max-width: 100%;
+        margin: 0 0.5em;
+    }
+
+    #settings label {
+        color: white;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    #settings input {
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+    }
+/* #endregion */
+
+
+/* #region canvas */
+canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#blurCanvas {
+    display: none !important;
+}
+/* #endregion */
+
+
+
+#ammo {
+    position: absolute;
+    bottom: 10;
+    right: 10;
+    color: yellow;
+    font-size: 48px;
+}
+
+.health-bar {
+    position: absolute;
+    background: black;
+    padding: 4px;
+}
+.health-bar > div {
+    background: red;
+    width: 100%;
+    height: 20px;
+}
+#bossHealth {
+    top: 0;
+    margin: 0 auto;
+    width: 20em;
+}
+
+#playerHealth {
+    bottom: 0;
+    width: 20em;
+}
+
+#fps {
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    right: 240px;
+    font-size: 24px;
+}
+#fps:not(:empty):after {
+    content: " FPS";
+}

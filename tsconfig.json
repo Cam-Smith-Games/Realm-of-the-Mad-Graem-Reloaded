@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      "lib": [ "es2019", "ES2019.Array", "es6", "dom", "scripthost", "DOM.Iterable" ],
+      //      "lib": [ "es6", "dom", "es2017", "esnext" ],
+
+      "module": "esnext",
+      "target": "es6",
+  
+      // WARNINGS
+      "noImplicitAny": true,
+      "noImplicitThis": true,
+      "noImplicitReturns": true,
+      "noImplicitOverride": true,
+      "allowUnreachableCode": false,
+      "allowUnusedLabels": false,
+      "alwaysStrict": true,
+
+      "noUnusedParameters": false,
+      "noUnusedLocals": false,
+
+      "outDir": "out",
+
+      "sourceMap": true,
+
+      "typeRoots": ["node_modules/@types"],
+
+
+      "moduleResolution": "node",
+
+      "allowSyntheticDefaultImports": true
+    
+    }
+}
